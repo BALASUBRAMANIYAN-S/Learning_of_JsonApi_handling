@@ -1,12 +1,59 @@
-# React + Vite
+# API Handling with RTK Query (JSONPlaceholder)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React practice project that fetches users from the free [JSONPlaceholder](https://jsonplaceholder.typicode.com/) API and shows them in a table, with a details page for each user.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Users table loaded with Redux Toolkit Query
+- Details page for a single user (`/card/:id`)
+- Data caching and loading handled by RTK Query
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19 + Vite
+- Redux Toolkit (RTK Query)
+- React Router 7
+- Tailwind CSS 4
+- PrimeReact, Axios
+
+## Getting Started
+
+**Prerequisites:** Node.js 18+ and npm
+
+```bash
+git clone https://github.com/BALASUBRAMANIYAN-S/Learning_of_JsonApi_handling.git
+cd Learning_of_JsonApi_handling
+npm install
+npm run dev
+```
+
+Open the URL shown in the terminal (usually `http://localhost:5173`).
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run ESLint |
+
+## Project Structure
+
+```
+src/
+├── app/store.js              # Redux store
+├── services/userApi.js       # RTK Query endpoints (users, users/:id)
+├── components/
+│   ├── ApiCall.jsx           # Users table
+│   └── UserCard.jsx          # User details
+├── App.jsx                   # Routes
+└── main.jsx
+```
+
+## API
+
+Base URL: `https://jsonplaceholder.typicode.com/`
+
+- `users` for the list
+- `users/{id}` for one user
+
+An internet connection is required.
